@@ -20,8 +20,22 @@ namespace TalkToThePuta
             Attitude = att;
             Health = health;
         }
+           
+        public int Attack()
+        {
+            int attackDamage = Mass + 2;
+
+            return attackDamage;
+        }
+
+        public int MagicAttack()
+        {
+            int attackDamage = Intelligence + 5;
+
+            return attackDamage;
+        }
+
+        
 
     }
-
-
 }
