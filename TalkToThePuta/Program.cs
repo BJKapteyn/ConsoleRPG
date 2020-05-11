@@ -10,10 +10,6 @@ namespace TalkToThePuta
 
             LilCleetus characterPt2 = StoryLine.GetWoke(character);
 
-
-
-
-
         }
     }
 }

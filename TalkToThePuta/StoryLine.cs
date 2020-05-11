@@ -31,6 +31,8 @@ namespace TalkToThePuta
 
             Console.WriteLine($"/nYou have {sPoints} good boy points\n Enter the number of good boy points you want to goop your mass stat up.");
 
+            
+
             while (true)
             {
                 Console.WriteLine($"Enter a number 1 to {sPoints}");
@@ -207,6 +209,8 @@ namespace TalkToThePuta
         public static LilCleetus GetWoke(LilCleetus lil)
         {
             Console.WriteLine("You wake up in a haze of sex drugs and fart clouds");
+
+
 
             return lil;
         }
