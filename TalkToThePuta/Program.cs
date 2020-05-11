@@ -6,9 +6,12 @@ namespace TalkToThePuta
     {
         static void Main(string[] args)
         {
-            LilCleetus character = StoryLine.CharacterCreater();
+            LilCleetus testCleet = new LilCleetus(20, 20, 20, 100);
+            StoryLine.GetWoke(testCleet);
 
-            LilCleetus characterPt2 = StoryLine.GetWoke(character);
+            //LilCleetus character = StoryLine.CharacterCreater();
+
+            //LilCleetus characterPt2 = StoryLine.GetWoke(character);
 
         }
     }
