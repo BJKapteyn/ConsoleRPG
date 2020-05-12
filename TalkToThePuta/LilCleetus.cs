@@ -49,6 +49,21 @@ namespace TalkToThePuta
                 Console.WriteLine("There is not enough inventory space.");
             }
         }
+
+        public void CheckItems()
+        {
+            if(ItemBag.Count == 0)
+            {
+                Console.WriteLine("You don't have anything in your pack.");
+            }
+            else
+            {
+                for(int i = 0; i < ItemBag.Count; i++)
+                {
+                    Console.WriteLine(ItemBag[i].Name + " - " + ItemBag[i].Description);
+                }
+            }
+        }
         
     }
 }

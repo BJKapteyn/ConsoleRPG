@@ -6,6 +6,7 @@ namespace TalkToThePuta
     {
         static void Main(string[] args)
         {
+
             LilCleetus testCleet = new LilCleetus(20, 20, 20, 100);
             StoryLine.GetWoke(testCleet);
 

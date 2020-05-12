@@ -215,12 +215,14 @@ namespace TalkToThePuta
             List<Buff> maskBuffs = new List<Buff>() { maskBuff };
             List<Buff> sunglassesBuffs = new List<Buff>() { sunglassesBuff };
 
+            //descriptions
             string maskDes = "Nothing that cool about the mask other than the fangs you drew on it.";
             string sunglassDes = "Awesome pre-rag sunglasses that only have a few scratches on them.";
 
-            Item mask = new Item(maskDes, false, maskBuffs);
-            Item sunglasses = new Item(sunglassDes, false, sunglassesBuffs);
+            Item mask = new Item("Face Mask" , maskDes, false, maskBuffs);
+            Item sunglasses = new Item("Cool Sunglasses", sunglassDes, false, sunglassesBuffs);
 
+            //for checking if actions were made or not
             bool didLookUnderNews = false;
             bool didLookInMirror = false;
             bool didCheckCloset = false;
@@ -233,6 +235,7 @@ namespace TalkToThePuta
                     "\nThere is a dusty looking newspaper on the foot of your bed." +
                     "\nThere is mirror hanging from your sick mounted moose antlers." +
                     "\nThere is are snores coming from the closet" +
+                    "\nOne thing you know is that you arent going outside without looking rad. Also you'd probably expire." +
                     "\nWhat would you like to do?");
                 if(!didLookUnderNews)
                 {
@@ -247,7 +250,7 @@ namespace TalkToThePuta
                 {
                     Console.WriteLine("\n3. Investigate snores.");
                 }
-
+                Console.WriteLine("\n4. Go outside.");
                 Console.WriteLine("Enter the number of the choice you'd like to make");
 
                 playerChoice = Console.ReadLine();
@@ -294,6 +297,36 @@ namespace TalkToThePuta
 
                         }
                         break;
+                    case "4":
+                        bool response = true;
+                        if(!didLookUnderNews && !didLookInMirror)
+                        {
+                            response = ConsoleStuff.YesOrNo("You are incredibly unprepared, do you still want to roll the dice? One wink from Odin and you'd be toast.");
+                        }
+                        else if(!didLookInMirror)
+                        {
+                            response = ConsoleStuff.YesOrNo("You didn't do your morning tick check, are you sure you would like to continue?");
+                        }
+                        else if(!didLookUnderNews)
+                        {
+                            response = ConsoleStuff.YesOrNo("That newspaper may be old but what if you missed a sweet Marmaduke comic, are you sure?");
+                        }
+                        else
+                        {
+                            Console.WriteLine("You look awesome, you feel awesome, time to head outside!");
+                            break;
+                        }
+
+                        if(response)
+                        {
+                            Console.WriteLine("Odin's horse's sixth leg, I tried to warn you.\n The sunlight beams through the few thin layers of atmosphere that are left" +
+                                " and burns out your eyes.\n You wander the wasteland as a blind beggar for the rest of your surprisingly not terrible days." +
+                                "\nYeah you could have had pretty sweet adventure if you hadn't lost your vision, but Ol Lil Cleetus just turns the page...");
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Please enter a number 1-4.");
+                        break;
                 }
 
                 if(didLookUnderNews && didLookInMirror)
@@ -302,6 +335,8 @@ namespace TalkToThePuta
                 }
                 else
                 {
+                    Console.WriteLine("You have all the things you need for basic survival: Peeper cover, slop hole cover. " +
+                        "\nTime to see if the unforgiving world has any forgiveness...");
                     ConsoleStuff.Break();
                     continue;
                 }
@@ -309,5 +344,5 @@ namespace TalkToThePuta
 
             return lil;
         }
-    }
+    
 }
