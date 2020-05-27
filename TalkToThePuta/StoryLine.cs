@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TalkToThePuta.Monsters;
 
 namespace TalkToThePuta
 {
@@ -30,7 +31,7 @@ namespace TalkToThePuta
                                 $"4.     Health:       {sHealth}\n");
 
             Console.WriteLine($"/nYou have {sPoints} good boy points\n Enter the number of good boy points you want to goop your mass stat up.");
-            
+
 
             while (true)
             {
@@ -219,7 +220,7 @@ namespace TalkToThePuta
             string maskDes = "Nothing that cool about the mask other than the fangs you drew on it.";
             string sunglassDes = "Awesome pre-rag sunglasses that only have a few scratches on them.";
 
-            Item mask = new Item("Face Mask" , maskDes, false, maskBuffs);
+            Item mask = new Item("Face Mask", maskDes, false, maskBuffs);
             Item sunglasses = new Item("Cool Sunglasses", sunglassDes, false, sunglassesBuffs);
 
             //for checking if actions were made or not
@@ -227,7 +228,7 @@ namespace TalkToThePuta
             bool didLookInMirror = false;
             bool didCheckCloset = false;
 
-            while(true)
+            while (true)
             {
                 Console.Clear();
                 Console.WriteLine("The morning has not been kind, You lack purpose and direction. You know you need to get outside. " +
@@ -237,16 +238,16 @@ namespace TalkToThePuta
                     "\nThere is are snores coming from the closet" +
                     "\nOne thing you know is that you arent going outside without looking rad. Also you'd probably expire." +
                     "\nWhat would you like to do?");
-                if(!didLookUnderNews)
+                if (!didLookUnderNews)
                 {
                     Console.WriteLine("\n1. Read Newspaper");
-                    
+
                 }
-                if(!didLookInMirror)
+                if (!didLookInMirror)
                 {
                     Console.WriteLine("\n2. Check the mirror for good looks.");
                 }
-                if(!didCheckCloset)
+                if (!didCheckCloset)
                 {
                     Console.WriteLine("\n3. Investigate snores.");
                 }
@@ -255,10 +256,10 @@ namespace TalkToThePuta
 
                 playerChoice = Console.ReadLine();
 
-                switch(playerChoice)
+                switch (playerChoice)
                 {
                     case "1":
-                        if(didLookUnderNews)
+                        if (didLookUnderNews)
                         {
                             Console.WriteLine("The newspaper was old and depricated. It is no more.");
                         }
@@ -271,7 +272,7 @@ namespace TalkToThePuta
                         }
                         break;
                     case "2":
-                        if(didLookInMirror)
+                        if (didLookInMirror)
                         {
                             Console.WriteLine("Yup, still freaking gorgeous");
                         }
@@ -284,8 +285,8 @@ namespace TalkToThePuta
 
                         }
                         break;
-                    case "3": 
-                        if(didCheckCloset)
+                    case "3":
+                        if (didCheckCloset)
                         {
                             Console.WriteLine("Flufflze needs his damn rest.");
                         }
@@ -299,15 +300,15 @@ namespace TalkToThePuta
                         break;
                     case "4":
                         bool response = true;
-                        if(!didLookUnderNews && !didLookInMirror)
+                        if (!didLookUnderNews && !didLookInMirror)
                         {
                             response = ConsoleStuff.YesOrNo("You are incredibly unprepared, do you still want to roll the dice? One wink from Odin and you'd be toast.");
                         }
-                        else if(!didLookInMirror)
+                        else if (!didLookInMirror)
                         {
                             response = ConsoleStuff.YesOrNo("You didn't do your morning tick check, are you sure you would like to continue?");
                         }
-                        else if(!didLookUnderNews)
+                        else if (!didLookUnderNews)
                         {
                             response = ConsoleStuff.YesOrNo("That newspaper may be old but what if you missed a sweet Marmaduke comic, are you sure?");
                         }
@@ -317,7 +318,7 @@ namespace TalkToThePuta
                             break;
                         }
 
-                        if(response)
+                        if (response)
                         {
                             Console.WriteLine("Odin's horse's sixth leg, I tried to warn you.\n The sunlight beams through the few thin layers of atmosphere that are left" +
                                 " and burns out your eyes.\n You wander the wasteland as a blind beggar for the rest of your surprisingly not terrible days." +
@@ -329,7 +330,7 @@ namespace TalkToThePuta
                         break;
                 }
 
-                if(didLookUnderNews && didLookInMirror)
+                if (didLookUnderNews && didLookInMirror)
                 {
                     break;
                 }
@@ -344,5 +345,5 @@ namespace TalkToThePuta
 
             return lil;
         }
-    
+    }
 }

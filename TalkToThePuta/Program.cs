@@ -1,4 +1,5 @@
 ﻿using System;
+using TalkToThePuta.Monsters;
 
 namespace TalkToThePuta
 {
@@ -7,8 +8,11 @@ namespace TalkToThePuta
         static void Main(string[] args)
         {
 
-            LilCleetus testCleet = new LilCleetus(20, 20, 20, 100);
-            StoryLine.GetWoke(testCleet);
+            LilCleetus testCleet = new LilCleetus();
+            Bloke testBloke = new Bloke();
+
+            Battle.RegularFight(testCleet, testBloke);
+            //StoryLine.GetWoke(testCleet);
 
             //LilCleetus character = StoryLine.CharacterCreater();
 
