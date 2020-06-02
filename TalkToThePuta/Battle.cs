@@ -6,10 +6,13 @@ namespace TalkToThePuta
 {
     class Battle
     {
+        //for regular blow for blow battles
         public static void RegularFight(LilCleetus lilCleet, IAdversary bloke)
         {
             Console.WriteLine($"You've been confronted with {bloke.Name}, they don't look friendly");
-            while(true)
+            bool isRunning = true;
+
+            while(isRunning)
             {
                 Console.WriteLine($"You have {lilCleet.Health} health");
                 Console.WriteLine("What would you like to do?\n" +
@@ -23,11 +26,13 @@ namespace TalkToThePuta
 
                 if(response == "1")
                 {
+                    //damage is calculated here for 
                     yourDamage = lilCleet.Attack();
                     theirDamage = bloke.Attack();
                 }
                 else if(response == "2")
                 {
+                    //you get a %50 chance to run.
                     Random r = new Random();
                     int flipACoin = r.Next(1, 3);
                     if (flipACoin == 2)
@@ -39,6 +44,7 @@ namespace TalkToThePuta
                     else
                     {
                         Console.WriteLine("You got away!");
+                        isRunning = false;
                         break;
                     }
                 }
@@ -47,9 +53,10 @@ namespace TalkToThePuta
                     Console.WriteLine("Enter a number 1 or 2 please thaaaaaanks.");
                     Console.ReadKey();
                 }
+
                 Console.WriteLine($"You did {yourDamage.ToString()}\n" +
                     $"{bloke.Name} did {theirDamage.ToString()}");
-
+                //take any damage away.
                 lilCleet.Health -= theirDamage;
                 bloke.Health -= yourDamage;
 
@@ -63,11 +70,14 @@ namespace TalkToThePuta
                     {
                         Console.WriteLine($"{bloke.Name} fell to his knees, staring longingly at the setting sun and dies peacefully");
                     }
+                    isRunning = false;
                     break;
                 }
 
                 ConsoleStuff.Break();
             }
+
+
         }
 
     }

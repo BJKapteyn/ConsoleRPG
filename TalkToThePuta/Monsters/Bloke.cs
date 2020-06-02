@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TalkToThePuta.Weapons;
 
 namespace TalkToThePuta.Monsters
 {
@@ -11,6 +12,8 @@ namespace TalkToThePuta.Monsters
         public int Intelligence { get; set; }
         public int Attitude { get; set; }
         public int Health { get; set; }
+        public int Defense { get; set; } 
+        public IWeapon EquipedWeapon { get; set; } = new Unarmed();
 
         public bool IsHairCool { get; set; }
 

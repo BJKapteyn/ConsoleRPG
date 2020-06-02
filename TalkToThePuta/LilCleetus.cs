@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TalkToThePuta.Weapons;
 
 namespace TalkToThePuta
 {
@@ -11,6 +12,8 @@ namespace TalkToThePuta
         public int Intelligence { get; set; }
         public int Attitude { get; set; }
         public int Health { get; set; }
+        public int Defense { get; set; }
+        public IWeapon EquipedWeapon { get; set; } = new Unarmed();
 
         public List<Item> ItemBag;
 
@@ -23,20 +26,33 @@ namespace TalkToThePuta
             Health = 100;
             ItemBag = new List<Item>();
         }
-        public LilCleetus(int mass, int intell, int att, int health)
+        public LilCleetus(int mass, int intell, int att, int health, int defense)
         {
             Mass = mass;
             Intelligence = intell;
             Attitude = att;
             Health = health;
+            Defense = defense;
             ItemBag = new List<Item>();
         }
 
         public int Attack()
         {
-            int attackDamage = Mass + 2;
+            int attackDamage = this.Mass + 2;
 
             return attackDamage;
+        }
+        //Overload for attack, since it has one parameter, it's signature is different than the regular Attack.
+        public int Attack(IAdversary guyWereFighting)
+        {
+            Random r = new Random();
+
+            int weaponDamage = r.Next(EquipedWeapon.MinDamage, EquipedWeapon.MaxDamage + 1);
+
+            int ActualDamage = weaponDamage + this.Mass;
+            ActualDamage -= guyWereFighting.Defense;
+
+            return ActualDamage;
         }
 
         public int MagicAttack()

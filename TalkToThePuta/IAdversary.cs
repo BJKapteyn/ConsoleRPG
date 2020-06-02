@@ -12,7 +12,7 @@ namespace TalkToThePuta
         public int Intelligence { get; set; }
         public int Attitude { get; set; }
         public int Health { get; set; }
-
+        public int Defense { get; set; }
         public int Attack();
     }
 }

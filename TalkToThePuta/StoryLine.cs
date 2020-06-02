@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using TalkToThePuta.Monsters;
+using TalkToThePuta.Weapons;
 
 namespace TalkToThePuta
 {
@@ -205,7 +206,7 @@ namespace TalkToThePuta
 
             return lilCleet;
         }
-
+        public ShinyDagger shinyDagger = new ShinyDagger();
         public static LilCleetus GetWoke(LilCleetus lil)
         {
             string playerChoice;

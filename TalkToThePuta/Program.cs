@@ -12,11 +12,16 @@ namespace TalkToThePuta
             Bloke testBloke = new Bloke();
 
             Battle.RegularFight(testCleet, testBloke);
-            //StoryLine.GetWoke(testCleet);
+            
+            
+
+            StoryLine.GetWoke(testCleet);
+
+            //LilCleetus characterPt2 = StoryLine.GetWoke(character);
+
 
             //LilCleetus character = StoryLine.CharacterCreater();
 
-            //LilCleetus characterPt2 = StoryLine.GetWoke(character);
 
         }
     }
